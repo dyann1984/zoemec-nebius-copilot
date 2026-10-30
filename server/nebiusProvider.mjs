@@ -74,6 +74,7 @@ export function createNebiusProvider({ env = process.env, fetchImpl = fetch, tim
             body: JSON.stringify({ model: config.model, max_tokens: 16384, temperature: 0,
               response_format: { type: 'json_schema', json_schema: { name: 'zoemec_engineering', strict: true, schema: RESPONSE_SCHEMA } },
               messages: [{ role: 'system', content: systemContent + (attempt ? '\n' + REPAIR_PROMPT : '') }, { role: 'user', content: JSON.stringify({ analysis, question, data: context }) }] }) });
+          if (!response.ok) console.error('Nebius upstream HTTP status', response.status);
           if (!response.ok) throw aiError(response.status === 429 ? 'NEBIUS_RATE_LIMIT' : 'NEBIUS_API_ERROR', response.status === 429 ? 429 : 502);
           const body = await response.text();
           if (body.length > 100000) throw aiError('INVALID_MODEL_OUTPUT', 502);
@@ -90,6 +91,7 @@ export function createNebiusProvider({ env = process.env, fetchImpl = fetch, tim
         }
       }
     } catch (error) {
+      if (!error.code) console.error('Nebius transport error', error.name, error.message); // never contains the key
       if (error.code && ['NEBIUS_RATE_LIMIT', 'NEBIUS_API_ERROR', 'INVALID_MODEL_OUTPUT'].includes(error.code)) throw error;
       throw aiError(controller.signal.aborted ? 'NEBIUS_TIMEOUT' : 'NEBIUS_API_ERROR', 502);
     } finally { clearTimeout(timer); }
