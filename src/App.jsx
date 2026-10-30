@@ -35,8 +35,9 @@ export default function App() {
     if (scenario.on && body.apuId) body.scenario = { kind: scenario.kind, value: Number(scenario.value) };
     try {
       const r = await fetch('/api/analyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-      const j = await r.json();
-      if (!r.ok || !j.ok) throw new Error(j.error || 'Analysis failed.');
+      const j = await r.json().catch(() => ({}));
+      if (r.status === 429) throw new Error('Too many requests from your network. Please wait a few minutes and try again.');
+      if (!r.ok || !j.ok) throw new Error(typeof j.error === 'string' ? j.error : 'Analysis failed. Please try again.');
       setResult(j);
     } catch (e) { setError(e.message); } finally { setBusy(false); }
   }
