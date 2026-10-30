@@ -1,0 +1,23 @@
+{
+  "description": "Real calls made by the ZOEMEC Judge Mode stage 11 backend (commercial repository, endpoint /api/judge-copilot). No prompts, keys or IP addresses are stored.",
+  "endpoint": "https://zoemecia.com/api/judge-copilot",
+  "provider": "Nebius Token Factory",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "recordedAt": "2026-10-30",
+  "productionAnonymousCalls": [
+    { "apuId": "judge-apu-ventana", "analysis": "explainConfidence", "locale": "en", "providerRequestId": "chatcmpl-93891ed9b84600ea", "totalTokens": 21986, "attempts": 1 },
+    { "apuId": "judge-apu-ventana", "analysis": "explainConfidence", "locale": "en", "providerRequestId": "chatcmpl-b19532cc35a87409", "totalTokens": 23295, "attempts": 1 },
+    { "apuId": "judge-apu-ventana", "analysis": "explainConfidence", "locale": "en", "providerRequestId": "chatcmpl-a27a603449d71a2c", "totalTokens": 23316, "attempts": 1 },
+    { "apuId": "judge-apu-ventana", "analysis": "explainConfidence", "locale": "en", "providerRequestId": "chatcmpl-a7755ee0466c264a", "totalTokens": 21548, "attempts": 1 }
+  ],
+  "observedFailures": [
+    { "note": "1 anonymous production request returned HTTP 502 (upstream error; cause not logged). The UI shows a retry message." }
+  ],
+  "observedLimits": [
+    { "note": "After 6 accepted requests from one IP within the hour the endpoint answered HTTP 429 DEMO_RATE_LIMITED without calling the model." }
+  ],
+  "backendSmokeBeforeDeploy": [
+    { "apuId": "judge-apu-muro", "analysis": "explainConfidence", "providerRequestId": "chatcmpl-907b07a952d93844", "totalTokens": 21979, "attempts": 1, "engineConfidence": 87 },
+    { "apuId": "judge-apu-firme", "analysis": "suggestReviewActions", "providerRequestId": "chatcmpl-9f37b9914ebdcd23", "totalTokens": 16102, "attempts": 1, "engineConfidence": 89 }
+  ]
+}

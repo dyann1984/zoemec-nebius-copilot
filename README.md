@@ -14,7 +14,13 @@ Construction estimators price work with unit price analyses (APU): materials, la
 
 ## What was built during the hackathon
 
-This is a standalone public edition. The commercial ZOEMEC platform (separate, private) existed before the hackathon; its engines, UI, database and exports are **not part of this repository**. Built for the Submission Period and included here: the Nebius/Nemotron provider and response validator, the evidence-grounded context builder, a new public deterministic cost engine (`server/engine/costEngine.mjs`), the copilot UI, the demo data and tests. See [docs/SCOPE.md](docs/SCOPE.md).
+The commercial ZOEMEC platform (private) existed before the hackathon: React/Vite UI, Firebase, APU generation and calculation, Confidence, Bid Risk, audit, Challenge, scenarios, CAD takeoff, schedules, PDF/Excel deliverables and the Judge Mode walkthrough. None of that is claimed as hackathon work and its engines and UI are **not part of this repository**.
+
+Built during the Submission Period: the Nebius Token Factory / NVIDIA Nemotron provider with strict JSON-schema output and a grounding validator; the evidence-reference context builder; the public-endpoint protections (per-IP and daily quotas charged before the model call, edge rate limit); Judge Mode **stage 11 (NVIDIA Nemotron Engineering Copilot)** with a welcome callout and a new tour step, in the private product; and, in this repository, a standalone copilot app with an original small cost engine, synthetic data, tests and evidence of real calls. See [docs/SCOPE.md](docs/SCOPE.md) and [docs/JUDGE_MODE_INTEGRATION.md](docs/JUDGE_MODE_INTEGRATION.md).
+
+## Live demo: ZOEMEC Judge Mode (stage 11)
+
+The hackathon demo is the full ZOEMEC product in public, no-login "Judge Mode": **https://zoemecia.com/?demo=1**. Its new stage 11, *NVIDIA Nemotron Engineering Copilot*, calls Nebius Token Factory live and explains the results of ZOEMEC's commercial engines with verifiable evidence references. The commercial engines and UI are private; this repository is the open-source integration layer and a runnable standalone app. Exactly what is shared, what differs and what cannot be reproduced from this repository is spelled out in [docs/JUDGE_MODE_INTEGRATION.md](docs/JUDGE_MODE_INTEGRATION.md). A standalone copy of this repository's app is also deployed at https://zoemec-nebius-copilot.vercel.app.
 
 ## Quick start
 
