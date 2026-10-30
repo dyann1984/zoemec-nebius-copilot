@@ -1,0 +1,49 @@
+{
+  "project": {
+    "id": "demo-las-palmas",
+    "name": "Las Palmas Residential - Building A",
+    "currency": "MXN",
+    "note": "Synthetic demo data. Prices and suppliers are fictional and are not market quotes."
+  },
+  "apus": [
+    {
+      "id": "apu-rebar",
+      "concept": "Supply and fabrication of reinforcing steel",
+      "unit": "kg",
+      "quantity": 800,
+      "baseDate": "2026-01-15",
+      "factors": { "overheadPct": 12, "profitPct": 10 },
+      "materials": [
+        { "id": "M1", "description": "Reinforcing steel fy 4200", "unit": "kg", "consumption": 1.05, "wastePct": 3, "unitPrice": 24,
+          "source": { "supplier": "Synthetic demo quote", "date": "2025-06-01", "status": "ESTIMATED" } },
+        { "id": "M2", "description": "Annealed tie wire", "unit": "kg", "consumption": 0.03, "wastePct": 0, "unitPrice": 38 }
+      ],
+      "labor": [
+        { "id": "L1", "description": "Rebar worker crew", "crewSize": 1, "dailyWage": 650, "burdenFactor": 1.4, "yieldPerDay": 90,
+          "source": { "supplier": "Synthetic regional wage table", "date": "2026-01-02", "status": "VERIFIED" } }
+      ],
+      "equipment": []
+    },
+    {
+      "id": "apu-block-wall",
+      "concept": "Concrete block wall, 15 cm",
+      "unit": "m2",
+      "quantity": 120,
+      "baseDate": "2026-01-15",
+      "factors": { "overheadPct": 12, "profitPct": 10 },
+      "materials": [
+        { "id": "M1", "description": "Concrete block 15x20x40", "unit": "pz", "consumption": 12.5, "wastePct": 5, "unitPrice": 17.5,
+          "source": { "supplier": "Synthetic demo supplier A", "date": "2026-01-05", "status": "VERIFIED" } },
+        { "id": "M2", "description": "Mortar mix", "unit": "m3", "consumption": 0.02, "wastePct": 8, "unitPrice": 1850,
+          "source": { "supplier": "Synthetic demo supplier B", "date": "2025-02-10", "status": "VERIFIED" } }
+      ],
+      "labor": [
+        { "id": "L1", "description": "Mason plus helper", "crewSize": 2, "dailyWage": 520, "burdenFactor": 1.4, "yieldPerDay": 12,
+          "source": { "supplier": "Synthetic regional wage table", "date": "2026-01-02", "status": "VERIFIED" } }
+      ],
+      "equipment": [
+        { "id": "E1", "description": "Mixer", "hourlyRate": 85, "yieldPerHour": 4 }
+      ]
+    }
+  ]
+}

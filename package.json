@@ -1,0 +1,24 @@
+{
+  "name": "zoemec-nebius-copilot",
+  "version": "1.0.0",
+  "description": "Evidence-grounded construction cost copilot powered by NVIDIA Nemotron on Nebius Token Factory (hackathon edition).",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "server": "node --env-file-if-exists=.env.local server/index.mjs",
+    "build": "vite build",
+    "start": "npm run build && npm run server",
+    "test": "node --test test/*.test.mjs",
+    "smoke": "node --env-file=.env.local scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "vite": "^8.1.0"
+  }
+}

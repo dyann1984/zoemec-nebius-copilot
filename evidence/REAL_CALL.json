@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-30T01:26:35.270Z",
+  "edition": "standalone-hackathon",
+  "provider": "Nebius",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "providerRequestId": "chatcmpl-b0c35cc535e79787",
+  "usage": {
+    "prompt_tokens": 4539,
+    "completion_tokens": 2584,
+    "total_tokens": 7123
+  },
+  "latencyMs": 43544,
+  "attempts": 2,
+  "status": "real_call_validated",
+  "evidenceRefs": [
+    "E16",
+    "E17",
+    "E20",
+    "E21",
+    "E24",
+    "E38",
+    "E39",
+    "E71",
+    "E72",
+    "E75",
+    "E78",
+    "E92",
+    "E93",
+    "E28",
+    "E32",
+    "E80",
+    "E84",
+    "E55",
+    "E56",
+    "E108",
+    "E113",
+    "E114",
+    "E115"
+  ],
+  "summaryText": "The analysis reveals limited verification for major material inputs and labor rates, highlighting where confidence in cost estimates is lower."
+}
